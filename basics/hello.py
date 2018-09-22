@@ -10,3 +10,4 @@ for i in range(10):
     print("Value of i is", i)
 
 print("Something.")
+print("added new line")
