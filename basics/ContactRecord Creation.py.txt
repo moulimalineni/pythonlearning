@@ -1,0 +1,10 @@
+
+Contact con = new Contact();
+
+con.firstname='chinna';
+con.lastname='pinky';
+con.phone='9465966';
+con.email='chinna@gmail.com';
+con.birthdate=date.newinstance(1980,08,08);
+insert con;
+system.debug('contact ID :'+con.Id );    

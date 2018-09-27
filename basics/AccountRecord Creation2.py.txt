@@ -1,0 +1,12 @@
+//Declarationand  Object creation and Assign values
+Account acc=new Account(Name='RFc info',Rating='warm',Industry='Movie',
+                        AnnualRevenue=800000);
+
+//Saving Records
+
+insert acc;
+system.debug('Account ID :'+acc.Id);
+
+
+
+

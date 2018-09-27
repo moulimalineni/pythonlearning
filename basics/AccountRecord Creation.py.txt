@@ -1,0 +1,16 @@
+//Declaration 
+Account acc;
+//Object creation
+acc=new Account();
+
+//Assign values
+
+acc.Name='Mouli info';
+acc.Rating='Hot';
+acc.Industry='Education';
+acc.AnnualRevenue=600000;
+
+//Saving Records
+
+insert acc;
+system.debug('Account ID :'+acc.Id);

@@ -1,0 +1,7 @@
+
+Opportunity Opp = new Opportunity();
+Opp.Name='New Opp';
+Opp.StageName='Needs Analasys';
+Opp.CloseDate=date.newinstance(2017,07,15);
+insert opp;
+
