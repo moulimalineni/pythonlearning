@@ -1,0 +1,7 @@
+Customer__c Cust = new Customer__C();
+cust.Name='Pinky';
+Cust.Salary__c=47000;
+Cust.Credit_Card_Number__c='5654656616';
+cust.Country__c='India';
+
+Insert Cust;
