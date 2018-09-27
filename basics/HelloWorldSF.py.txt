@@ -1,0 +1,15 @@
+public class helloworld1
+{
+    public void wish(string name){
+    system.debug(name);
+    }
+}
+
+
+//Object Creation
+
+
+helloworld1 h = new helloworld1();
+h.wish('welcome to Salesforce');
+h.wish('welcome to Mouli');
+h.wish('welocome to Chandra');

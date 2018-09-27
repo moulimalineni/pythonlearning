@@ -1,0 +1,19 @@
+public class calculator1
+{
+    public integer add(integer a,integer b){
+        return a+b;
+    }  
+    
+    public integer prod(integer a,integer b){
+        return a*b;
+    }   
+}
+
+//Object creation
+
+Calculator1 c = new calculator1();
+integer x= c.add(10,15);
+system.debug('Addtion Value is : '+x);
+integer y= c.prod(10,15);
+system.debug('Product Value is : '+y);
+
