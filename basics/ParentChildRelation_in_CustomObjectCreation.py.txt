@@ -1,0 +1,16 @@
+
+customer__c cust = new customer__c();
+cust.name = 'Krishna';
+cust.salary__c = 65000;
+cust.country__c = 'india';
+cust.account_type__c = 'savings';
+cust.Credit_Card_Number__c = '5432167890123456';
+insert cust;
+
+transactions__c tr = new transactions__c();
+tr.name='t10';
+tr.transactionamount__c=24000;
+tr.transaction_type__c='Cash';
+//parent child relation dynamically
+tr.customer__c=cust.id;
+insert tr;

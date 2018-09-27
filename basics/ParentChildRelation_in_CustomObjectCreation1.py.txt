@@ -1,0 +1,7 @@
+transactions__c tr = new transactions__c();
+tr.name='t11';
+tr.transactionamount__c=65000;
+tr.transaction_type__c='Check';
+//parent child relation dynamically
+tr.customer__c='a007F00001Ct1SF';
+insert tr;
