@@ -1,0 +1,19 @@
+Account acc=new Account();
+acc.Name='Maruthi';
+acc.Rating='Hot';
+acc.Industry='Automobiles';
+acc.AnnualRevenue=200000;
+insert acc;
+system.debug('Account ID :'+acc.Id);
+
+
+
+Contact con = new Contact();
+
+con.firstname='Vijay';
+con.lastname='Kumar';
+con.phone='9465922266';
+con.birthdate=date.newinstance(1980,08,08);
+//parent child Relation
+con.accountId=acc.Id;   
+insert con;

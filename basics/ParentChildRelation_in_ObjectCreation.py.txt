@@ -1,0 +1,11 @@
+
+
+Contact con = new Contact();
+
+con.firstname='Kiran';
+con.lastname='Reddy';
+con.phone='863522266';
+con.birthdate=date.newinstance(1980,08,08);
+//parent child Relation
+con.accountId='0017F00001DqmT9QAJ';   
+insert con;
