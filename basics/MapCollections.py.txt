@@ -1,0 +1,19 @@
+//Map
+
+SYntax: map<key,value> varible name = new map<key,value>();
+
+Keys must be Primitve datatypes and value may be primitive data types or reference datatypes
+
+data is storing to keys dictinory.
+ put(key,Value);-------> it is using to storing  data in the map.if key is duplicate value is replacing.
+
+map<string,integer> m = new map<string,integer>();
+m.put('Sachin',200);
+m.put('Sehwag',219);
+m.put('Rohit',264);
+m.put('Dhoni',183);
+system.debug('Map values are :'+m);
+m.put('Sachin',220);
+m.put('dhoni',250);
+system.debug('Map values are :'+m);
+

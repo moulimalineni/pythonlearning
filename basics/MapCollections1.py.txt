@@ -1,0 +1,20 @@
+map<string,integer> m = new map<string,integer>();
+m.put('Sachin',200);
+m.put('Sehwag',219);
+m.put('Rohit',264);
+m.put('Dhoni',183);
+system.debug('Map values are :'+m);
+system.debug('Map Size :'+m.size());
+
+m.put('Sachin',220);
+m.put('dhoni',250);
+system.debug('Map values are :'+m);
+system.debug('Map Size :'+m.size());
+
+integer score=m.get('Sachin');
+system.debug('Schin Value is :'+score);
+system.debug('Dhoni Contains Value :'+m.containskey('Dhoni'));//true
+system.debug('Veeru Contains Value :'+m.containskey('Veeru'));//false
+set<string> keys=m.keyset();
+system.debug(keys);
+

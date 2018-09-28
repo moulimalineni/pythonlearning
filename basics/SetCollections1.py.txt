@@ -1,0 +1,13 @@
+set<integer> a= new set<Integer>();
+a.add(10); 
+a.add(20);
+a.add(null); 
+a.add(45);  
+a.add(82);  
+a.add(10); 
+a.add(null);  
+a.add(68); 
+system.debug('List Values :'+a);
+a.remove(45);
+a.add(30+50);
+system.debug('List Values :'+a);

@@ -1,0 +1,21 @@
+set<integer> a= new set<Integer>();
+a.add(10); 
+a.add(20);
+a.add(null); 
+a.add(45);  
+a.add(82);  
+a.add(10); 
+a.add(null);  
+a.add(68); 
+system.debug('List Values :'+a);
+a.remove(45);
+a.add(30+50);
+system.debug('List Values :'+a);
+system.debug('Set Size is :'+a.size());//6
+system.debug('set Contains 40 :'+a.contains(40));//False
+system.debug('set Contains 10 :'+a.contains(10));//True
+a.clear();
+
+system.debug('Set Size is :'+a.size());//0
+
+
