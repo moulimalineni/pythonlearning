@@ -1,0 +1,18 @@
+ public class AccountDynInsert1 {
+    public void InsertAcc(String aName,String ph,String rate,Decimal Revenue){
+        Account acc = new Account();
+        acc.Name=aname;
+        acc.Phone=ph;
+        acc.Rating=rate;
+        acc.AnnualRevenue=revenue;
+        insert acc;
+    }
+
+}
+
+AccountDynInsert1 ac = new AccountDynInsert1();
+ac.insertAcc('Murali','945855455','warm',4500000);
+ac.insertAcc('Sai','858585255','hot',5400000);
+ac.insertAcc('Anil','758228255','cold',6500000);
+ac.insertAcc('Subbu','645855455','warm',2500000);
+

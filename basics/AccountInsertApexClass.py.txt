@@ -1,0 +1,15 @@
+ public class AccountInsertCtrl1 {
+    public void insertAcc(){
+        account acc =new account();
+        acc.Name='Ramesh';
+        acc.Rating='Cold';
+        acc.Phone='6396396550';
+        acc.Account_Type__c='Savings';
+        insert acc;
+        
+    }
+
+}
+
+AccountInsertCtrl1 Ac = new AccountInsertCtrl1();
+ac.insertAcc();
