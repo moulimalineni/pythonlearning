@@ -21,4 +21,6 @@ p.m1();//yes
 child1 c = new child1();
 c.m1();
 c.m2();
-//if we create object to child first system will create parent object the it creates child object so we can call parent and child functions
+//if we create object to child first system will create parent object the it creates child object
+    so we can call parent and child functions
+//By default any class is final class if u want to use this class in other classses we must use virtual key word.
