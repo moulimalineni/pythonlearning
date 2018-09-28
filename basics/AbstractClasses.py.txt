@@ -1,0 +1,49 @@
+ //Declaration + inmplimentation is called Concrete Method
+    any normal class is called concrete clases only.
+  method declaration only is called Abstract Methods.
+we can create object for concrete class but we cannot create object to Abstract Classes.
+
+
+
+//Abstract Class -----> concrete methods + Abstract Methods.
+public abstract class AbsDemo1
+{
+    //Method Declaration + Implementation ------------> Concrete Method
+    public void show()//Method Declaration
+    //Implementation    
+    {
+        system.debug('Salesforce');
+    }
+    //Method Declaration-------------> Abstract Method
+    public abstract void wish(); //Method Declaration
+}
+
+
+public class AbsChildSFDC1 extends AbsDemo1{
+    
+    public override void wish(){
+        System.Debug('welcome to salesforce');
+    }
+
+}
+
+public class AbsChildHadoop1 extends AbsDemo1 {
+	
+    
+    public override void wish(){
+        System.Debug('welcome to Hadoop');
+    }
+}
+
+
+
+AbsChildSFDC1 a = new AbsChildSFDC1();
+a.show();
+a.wish();
+
+
+
+AbsChildHadoop1 b = new AbsChildHadoop1();
+b.show();
+b.wish();
+
