@@ -1,0 +1,24 @@
+public virtual class Parent1 {
+    public void m1(){
+        system.debug('Parent Functin');
+    }
+
+}
+
+public class Child1 extends parent1{
+    public void m2(){
+        system.debug('Child Funtion');
+    }
+
+}
+
+parent1 p = new parent1();
+p.m1();//yes
+//p.m2();//no
+//if we create an object to parent,then we can call only parent class functions.
+
+
+child1 c = new child1();
+c.m1();
+c.m2();
+//if we create object to child first system will create parent object the it creates child object so we can call parent and child functions
