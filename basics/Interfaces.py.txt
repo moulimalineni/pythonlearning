@@ -1,0 +1,38 @@
+public Interface MyInter1 {
+    
+    void show();
+    void wish();
+
+}
+
+
+public class MyChildSFDC1 implements MyInter1 {
+    public void show(){
+        system.debug('Salesforce');
+    }
+    public void wish(){
+        system.debug('Welcome to Salesforce');
+    }
+
+}
+
+public class MyChildHadoop1 implements MyInter1 {
+
+   public void show(){
+        system.debug('Hadoop');
+    }
+    public void wish(){
+        system.debug('welcome to Hadoop');
+    }
+}
+
+//implements is the keyword here instead of Abstract
+
+MyChildSFDC1 a =new MyChildSFDC1();
+a.show();//salesforce
+a.wish();//welcome to salesforce
+
+
+MyChildHadoop1 b = new MyChildHadoop1();
+b.show();//Hadoop
+b.wish();//welcome to Hadoop
