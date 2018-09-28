@@ -1,0 +1,12 @@
+List<integer> a= new List<Integer>();
+a.add(10); // 0 index
+a.add(20);// 1 index
+a.add(45); // 2 index
+a.add(null);  // 3 index
+a.add(82);   // 4 index
+a.add(10);  // 5 index
+a.add(null);  // 6 index
+a.add(68); // 7 index
+system.debug('List Values :'+a);
+a.set(2,6);
+system.debug('List Values :'+a);

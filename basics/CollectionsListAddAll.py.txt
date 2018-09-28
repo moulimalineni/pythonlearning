@@ -1,0 +1,19 @@
+List<integer> ages = new List<Integer>();
+ages.add(10);
+ages.add(null);
+ages.add(20);
+ages.add(null);
+
+
+List<integer> a= new List<Integer>();
+a.add(10); // 0 index
+a.add(20);// 1 index
+a.add(45); // 2 index
+a.add(null);  // 3 index
+a.add(82);   // 4 index
+a.addAll(ages);
+a.add(10);  // 5 index
+a.add(null);  // 6 index
+a.add(68); // 7 index
+system.debug('List Values :'+a);
+

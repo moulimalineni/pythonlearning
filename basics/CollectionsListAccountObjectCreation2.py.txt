@@ -1,0 +1,4 @@
+Account a1 = new Account(Name='vinay');
+Account a2 = new Account(name='ramesh');
+List<Account> AccList = new List<Account> {a1,a2};
+system.debug('Account Records are :'+AccList);

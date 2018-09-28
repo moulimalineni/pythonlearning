@@ -1,0 +1,19 @@
+Account a1=new account(name='cchandra',phone='6265816466');
+Account a2=new account(name='cPinky',phone='82564646');
+Account a3=new account(name='cSam',phone='6568162189');
+Account a4=new account(name='cSiri',phone='991986996');
+
+contact c1 = new contact(lastname='cRavi',Firstname='Kcumar',phone='5561665256');
+contact c2 = new contact(lastname='cHari',Firstname='cKrishna',phone='5415616516');
+contact c3 = new contact(lastname='cmurali',Firstname='csharma',phone='956959659');
+contact c4 = new contact(lastname='cmahesh',Firstname='cvarma',phone='864969859');    
+
+customer__c cust =new Customer__C(name='ckirsh',salary__c=80000,Credit_Card_Number__c='5556986511');
+
+Credit_Card__c cr = new Credit_Card__c(name='CC002');
+
+
+List<SObject> Sobj = new List<SObject>{a1,a2,a3,a4,c1,c2,c3,c4,cust,cr};
+    system.debug(SObj);
+	insert SObj;
+
