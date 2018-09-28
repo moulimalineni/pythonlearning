@@ -1,0 +1,19 @@
+public class OverLoadDemo1 {
+    public void add(integer a,integer b){
+        system.debug('integer,integer');
+        this.add(10,6,2);
+        this.add(10,6,2);
+        this.add(10,6.2);
+    }
+	
+     public void add(integer a,Decimal b){
+        system.debug('integer,Decimal');
+    }
+     public void add(integer a,integer b,integer c){
+        system.debug('integer,integer,integer');
+    }
+}
+
+
+OverLoadDemo1 d = new OverLoadDemo1();
+d.add(10,6);

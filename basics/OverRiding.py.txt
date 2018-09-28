@@ -1,0 +1,30 @@
+public virtual class ParentScore1 {
+    public virtual void score(){
+        system.debug('Parent Function : Rohit Old Score is 216');
+    }
+	
+    public void show(){
+        system.debug('salesforce');
+    }
+}
+
+public class ChildScore1 extends ParentScore1 {
+     public override void score()//Method Declaration
+         //Implementation or Body
+     {
+        system.debug('Child Function : Rohit New Score is 264');
+    }
+
+}
+
+ParentScore1 p = new ParentScore1();
+p.score();
+
+ChildScore1 c= new ChildScore1();
+c.score();
+
+
+//while overriding parent class and parent method before must use Virtual keyword,Bcoz by 
+  default classes , methods are final.child class method before must use override keyword
+   we can override only parentchild classes,we cannot override with in the same class.
+method resulution is takes care by object creation.
