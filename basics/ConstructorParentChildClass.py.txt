@@ -1,0 +1,18 @@
+public class parent{
+    public parent(){
+        system.debug('Parent Default Constructor');
+    }
+    public parent(integer a){
+        system.debug('Parent integer Constructor');
+    }
+}
+
+public class child extends parent{
+    public child(){
+        super(10);
+        system.debug('Child Default Constroctor');
+    }
+}
+
+child c = new child();
+

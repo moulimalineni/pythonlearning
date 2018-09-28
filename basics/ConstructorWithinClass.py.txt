@@ -1,0 +1,29 @@
+//Constructor: 
+It is a special kind of method.It is  excutes autometically,when an object is created.
+It doesnt contain any return statement.even void.
+Constructor name and class name must be same.
+Overloading concept is supporting in constructor.
+
+
+
+public class student
+{
+    public student(){
+        this('raj');
+        system.debug('Default constructor or no argument constructor');
+        this.show();
+        this.show();
+        this.show();
+        this.show();
+    }
+    //constructor
+    public student(string str){
+        system.debug('String argument constructor');
+    }
+    	//method
+        public void show(){
+        system.debug('method excuted');
+    }
+}
+
+student st = new student();
