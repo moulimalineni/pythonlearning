@@ -1,0 +1,10 @@
+contact c1 = new contact(lastname='Ravi',Firstname='Kumar',phone='5561665256');
+contact c2 = new contact(lastname='Hari',Firstname='Krishna',phone='5415616516');
+contact c3 = new contact(lastname='murali',Firstname='sharma',phone='956959659');
+contact c4 = new contact(lastname='mahesh',Firstname='varma',phone='864969859');
+Contact[] con = new Contact[4];
+con[0]=c1;
+con[1]=c2;
+con[2]=c3;
+con[3]=c4;
+    system.debug(con);

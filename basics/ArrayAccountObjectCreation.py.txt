@@ -1,0 +1,7 @@
+Account a1=new account(name='chandra',phone='6265816466');
+Account a2=new account(name='Pinky',phone='82564646');
+Account a3=new account(name='Sam',phone='6568162189');
+Account a4=new account(name='Siri',phone='991986996');
+
+Account[] acc = new Account[] {a1,a2,a3,a4};
+    system.debug('Account Records are :'+acc);

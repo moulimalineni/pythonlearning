@@ -1,0 +1,21 @@
+
+public class test
+{
+    
+    public string name;
+    public integer no;
+    
+}
+
+test t1 = new test();
+t1.Name='Kiran';
+t1.no=1001;
+
+test t2 = new test();
+t2.Name='vijay';
+t2.no=1002;
+test[] t = new test[2];
+t[0]=t1;
+t[1]=t2;
+system.debug(t);
+

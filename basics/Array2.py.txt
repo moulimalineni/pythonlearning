@@ -1,0 +1,5 @@
+integer[] a = new integer[300];
+system.debug(a);
+a[0]=10;
+a[2]=25;
+system.debug(a);

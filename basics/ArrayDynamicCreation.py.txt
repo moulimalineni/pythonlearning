@@ -1,0 +1,2 @@
+integer[] a = new integer[] {10,null,15,20,null,10,null,20};
+system.debug(a);

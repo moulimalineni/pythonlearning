@@ -1,0 +1,17 @@
+//Arrays
+
+//If you want store simliar type we can go for arrays
+its is a collection index based  homoginious  elements and fixed size,
+once we create an array ,we cannot increase or decrease size of an array.
+
+syntax:
+
+datatype [] variblename = new datatype [size];
+ex: integer[] a = new integer[3];
+
+
+integer[] a = new integer[3];
+system.debug(a);
+a[0]=10;
+a[2]=25;
+system.debug(a);

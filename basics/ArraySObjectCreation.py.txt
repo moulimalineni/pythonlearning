@@ -1,0 +1,18 @@
+Account a1=new account(name='chandra',phone='6265816466');
+Account a2=new account(name='Pinky',phone='82564646');
+Account a3=new account(name='Sam',phone='6568162189');
+Account a4=new account(name='Siri',phone='991986996');
+
+contact c1 = new contact(lastname='Ravi',Firstname='Kumar',phone='5561665256');
+contact c2 = new contact(lastname='Hari',Firstname='Krishna',phone='5415616516');
+contact c3 = new contact(lastname='murali',Firstname='sharma',phone='956959659');
+contact c4 = new contact(lastname='mahesh',Firstname='varma',phone='864969859');    
+
+customer__c cust =new Customer__C(name='kirsh',salary__c=80000,Credit_Card_Number__c='5116986511');
+
+Credit_Card__c cr = new Credit_Card__c(name='CC001');
+
+
+SObject[] Sobj = new SObject[] {a1,a2,a3,a4,c1,c2,c3,c4,cust,cr};
+    system.debug('Account Records are :'+SObj);
+	insert SObj;
