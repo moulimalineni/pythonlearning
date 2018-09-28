@@ -3,10 +3,7 @@ public virtual class ParentScore1 {
         system.debug('Parent Function : Rohit Old Score is 216');
     }
 	
-    public void show(){
-        system.debug('salesforce');
-    }
-}
+  }
 
 public class ChildScore1 extends ParentScore1 {
      public override void score()//Method Declaration
