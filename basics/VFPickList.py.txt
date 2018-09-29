@@ -1,0 +1,21 @@
+<apex:page controller="PickListCtrl1" >
+    <apex:form >
+        Account Types :
+        <apex:selectlist size="1" value="{!AccType }">
+            <apex:selectOption itemlabel="None" ItemValue="None"/>
+            <apex:selectOption itemlabel="Current" ItemValue="Current"/>
+            <apex:selectOption itemlabel="NRI" ItemValue="NRI"/>
+            <apex:selectOption itemlabel="Savings" ItemValue="Savings"/>
+            <apex:actionSupport event="onchange"/>
+        </apex:selectlist><br/>
+        <apex:outputtext value="Selected Account is : {!AccType }"/>
+        
+    </apex:form>
+</apex:page>
+
+
+public class PickListCtrl1 {
+
+    public string AccType {set;get;}
+    
+}

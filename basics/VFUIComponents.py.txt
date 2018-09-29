@@ -1,0 +1,13 @@
+<apex:page >
+    <apex:form >
+        <apex:outputText >Enter User Name :</apex:outputText>
+        <apex:inputText /><br/><br/>
+        
+        <apex:outputText value="Enter Password" />
+        <apex:inputsecret /><br/><br/>
+        Description : <apex:inputTextarea rows="4" cols="20" />
+        <br/><br/>
+        <apex:OutputText Value="Active" /> 
+        <apex:inputCheckbox />
+    </apex:form>
+</apex:page>
