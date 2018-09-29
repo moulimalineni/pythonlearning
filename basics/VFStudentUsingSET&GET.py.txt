@@ -1,0 +1,20 @@
+<apex:page controller="StudentApex1">
+    name : {!name} <br/>
+    age  : {!age}  <br/>
+    fee  : {!fee}
+</apex:page>
+
+ //Class
+public class StudentApex1 {
+
+    public string name {set;get;}
+    public integer age {set;get;}
+    public decimal Fee {set;get;}
+    
+    public StudentApex1(){
+    
+        name='ramesh';
+        Age = 25;
+        fee= 20000;
+    } 
+    
