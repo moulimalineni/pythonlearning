@@ -1,0 +1,17 @@
+<apex:page standardController="Account" sidebar="false" showHeader="true">
+    <Apex:pageBlock Title="General Information" 
+    helpTitle="Login" helpurl="http://www.login.salesforce.com">
+         <h1>Chandramouli</h1>  <br/>
+        Chandramouli <br/>
+        {!10+20+30} <br/>
+        {!'Mouli'} <br/>
+        {!isNull(10)}
+    </Apex:pageBlock>
+    
+    <apex:pageBlock title="Account Information">
+        Account Name: {!Account.Name} <br/>
+        Phone Number : {!Account.Phone} <br/>
+        Industry     : {!Account.Industry} <br/>
+    </apex:pageBlock>
+   
+</apex:page>
