@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:pageblock title="Global Data" >
+        First Name : {!$User.FirstName} <br/>
+        Last Name : {!$User.LastName} <br/>
+        Profile Name :  {!$Profile.Name} <br/>
+    </apex:pageblock> 
+</apex:page>
