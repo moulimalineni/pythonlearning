@@ -1,0 +1,7 @@
+List<Contact> conList = [select id,firstname,lastname,email,birthdate,
+                         Account.Name,Account.Phone,Account.Rating,Account.AnnualRevenue 
+                         from Contact];
+for(Contact con : conList){
+    system.debug('Contact Records :'+con);
+    system.debug('Account Records :'+con.Account);
+}

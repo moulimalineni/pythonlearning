@@ -1,0 +1,9 @@
+List<Customer__c> custList = [select id,name,salary__c,Country__c,State__c,
+                              (select id,name,TransactionAmount__c,Transaction_Time__c,Transaction_Type__c from Transactions__r)
+                               from Customer__c];
+
+
+    for(Customer__c cust : Custlist){
+        system.debug('Customer Records :'+cust);
+        system.debug('Transaction records :'+cust.Transactions__r+'\n');
+    }

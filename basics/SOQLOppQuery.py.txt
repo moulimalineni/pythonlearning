@@ -1,0 +1,4 @@
+List<Opportunity> OppList = [select id,name,stagename,closedate from opportunity];
+for(Opportunity opp : OppList){
+    system.debug('Opportunity Records :'+opp+'\n');
+}

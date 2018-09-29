@@ -1,0 +1,17 @@
+SOQL Queries: Salesforce object query Language.
+
+syntax: List<SOblect> TList = [select c1,c2,c3---cn from SObject];
+
+
+List<account> AccList = [select id,name,phone,rating,AnnualRevenue,Industry from Account];
+system.debug('Number of Records are :'+AccList.size());
+for(Account acc : AccList){
+    
+    system.debug('Account Records are :'+acc);
+    system.debug('Account Name :'+acc.Name);
+    system.debug('Account Phone :'+acc.Phone);
+    system.debug('Rating :'+acc.Rating);
+    system.debug('Annual revenue :'+acc.AnnualRevenue);
+    system.debug('Industry :'+acc.Industry+'\n');
+    
+}

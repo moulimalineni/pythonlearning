@@ -1,0 +1,9 @@
+List<Account> accList = [select id,name,phone,rating,industry,AnnualRevenue, 
+                         (select firstname,lastname,email,birthdate from contacts),
+                         (select id,name,stagename,closedate from Opportunities)
+                         from Account];
+for(Account acc:accList){
+    system.debug('Account Records :'+acc);
+    system.debug('Contact Records :'+acc.Contacts);
+    system.debug('Opportunity Records :'+acc.Opportunities+'\n');
+}

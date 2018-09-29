@@ -1,0 +1,8 @@
+List<Contact> ConList = [select id,Firstname,lastname,email,BirthDate from Contact];
+system.debug('Number of Records :'+Conlist.size());
+for(Contact con : ConList){
+    
+    system.debug('Contact Records are :'+con);
+    system.debug('Contact First Name :'+con.FirstName);
+    system.debug('Last Name :'+con.LastName+'\n');
+}

@@ -1,0 +1,10 @@
+
+List<Transactions__c> TrList = [select Name,TransactionAmount__c,Transaction_Time__c,Transaction_Type__c,
+                            Customer__r.name,Customer__r.salary__c,Customer__r.Country__C,Customer__r.state__c 
+                            from Transactions__c];
+    for(Transactions__c tr : TrList){
+        system.debug('transaction Records :'+tr);
+        system.debug('Customer Records :'+tr.Customer__r);
+    }
+
+

@@ -1,0 +1,9 @@
+List<Customer__C> CustList = [select id,name,Salary__c,Country__c,State__C from Customer__c 
+                             where country__C ='India'];
+for(Customer__C cust : CustList){
+    
+    system.debug('Customer Records are :'+cust);
+    system.debug('Customer Name :'+cust.Name);
+    system.debug('Salary :'+cust.salary__C);
+    system.debug('Customer Country :'+cust.Country__c+'\n');
+}
