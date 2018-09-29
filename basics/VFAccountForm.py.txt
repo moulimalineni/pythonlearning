@@ -1,0 +1,62 @@
+<apex:page controller="AccountCtrl1">
+    <apex:form >
+        <apex:pageBlock title="Account Form">
+            <apex:pageBlockSection columns="1" >
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Account Name"/>
+                    <apex:inputtext value="{!aname}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Annual Revenue"/>
+                    <apex:inputtext value="{!Revenue}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Industry"/>
+                    <apex:inputtext value="{!Industry}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Phone"/>
+                    <apex:inputtext value="{!Phone}"/>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            <apex:pageblockButtons >
+                <apex:commandButton value="Submit" action="{!saveMyAcount}"/>
+            </apex:pageblockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+
+
+
+
+
+public class AccountCtrl1 {
+    
+    public string aname {set;get;}
+    public decimal Revenue {set;get;}
+    public string Industry {set;get;}
+    public string Phone {set;get;}
+    
+    Account acc;
+    
+
+    //method
+    public PageReference saveMyAcount(){
+        
+        acc =new Account();
+        acc.Name=aname;
+        acc.AnnualRevenue=revenue;
+        acc.Industry =Industry ;
+        acc.Phone=Phone;
+        insert acc;
+        pagereference pg = new pagereference('/'+acc.Id);
+        return pg;
+        
+    }
+}

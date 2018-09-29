@@ -1,0 +1,16 @@
+<apex:page standardController="Customer__c">
+    <apex:form >
+        <apex:pageBlock title="Account Form">
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Customer__c.name}"/>
+                <apex:inputField value="{!Customer__c.Salary__c}"/>
+                <apex:inputField value="{!Customer__c.Country__c}"/>
+                <apex:inputField value="{!Customer__c.State__c}"/>
+                <apex:inputField value="{!Customer__c.Credit_Card_Number__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Submit" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
