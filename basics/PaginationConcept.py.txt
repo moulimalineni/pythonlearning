@@ -1,0 +1,115 @@
+
+<apex:page controller="PaginationApex">
+    <apex:form >
+        List View Options
+           <apex:selectlist size="1" value="{!AccFilterId}">
+           <apex:selectOptions value="{!View}"/>
+           <apex:actionsupport event="onchange" action="{!resetFilter}"/>
+           </apex:selectlist>      
+        <Apex:pageBlock title="Account Records">
+           <apex:pageblockButtons >
+               <apex:commandButton value="First" action="{!firstPage}"/>
+               <apex:commandButton value="Previous" action="{!Previous}"/>
+               <apex:commandButton value="Next" action="{!Next}"/>
+               <apex:commandButton value="Last" action="{!lastPage}"/>
+           </apex:pageblockButtons>
+           
+               <apex:pageblockTable value="{!Accounts}" var="acc">
+                   <apex:column value="{!acc.Name}"/>
+                   <apex:column value="{!acc.Phone}"/>
+                   <apex:column value="{!acc.Rating}"/>
+                   <apex:column value="{!acc.Industry}"/>
+                   <apex:column value="{!acc.AnnualRevenue}"/>
+               
+               </apex:pageblockTable>
+            
+        </Apex:pageBlock>
+    </apex:form>
+</apex:page>
+
+
+
+
+
+
+
+public class PaginationApex {
+    
+    private string query ='Select ID,Name,phone,rating,Industry,AnnualRevenue from Account ORDER BY NAME ASC';
+    public string AccFilterId {set;get;}
+    private integer  pagesize=10;
+    //COnstructor 
+    public PaginationApex(){}
+    
+    public ApexPages.StandardSetController ssc {
+        get{
+            if(ssc==null){
+                ssc=new ApexPages.StandardSetController(Database.getQueryLocator(query));
+                ssc.setPageSize(PageSize);
+                //we have to set filterid after pagesize,else it will not work
+                if(AccFilterId!=null)
+                {
+                    ssc.setFilterId(AccFilterId);
+                 }   
+                
+            }
+            return ssc;
+        }set;
+    
+    
+}
+
+    //Navigate to first page
+    public void  firstPage()
+    {
+        ssc.first();
+    }    
+    
+    //Navigate to last page
+    public void lastPage()
+    {
+        ssc.last();
+    }
+
+    //Navigate to next page
+    public void Next()
+    {
+        if(ssc.getHasNext())
+        {
+            ssc.next();
+        }    
+    
+    }
+
+    //Navigate to next page
+    public void Previous()
+    {
+        if(ssc.getHasPrevious())
+        {
+            ssc.previous();
+        }    
+    
+    }
+
+    public list<Account> getAccounts()
+    {
+        return (List<Account>)ssc.getRecords();
+    }
+    
+    //get all available list view for account
+    public selectOption[] getView(){
+        return ssc.getListviewOptions();  
+          
+    }
+    
+    //reset list view
+    
+    public Pagereference resetFilter()
+    {
+    
+        ssc=null;
+        ssc.setpageNumber(1);
+        return null;
+    }
+    
+ }
