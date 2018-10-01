@@ -1,0 +1,61 @@
+<apex:page controller="SuperMarketCtrl1">
+    <apex:form >
+        <apex:pageBlock title="Super Market Form ">
+        <apex:pageBlockTable Value="{!prList}" var="pr">
+            <apex:column headerValue="Product Name">
+                <apex:inputText value="{!pr.pname}"/>
+            </apex:column>
+            
+            <apex:column headerValue="Product Quantity">
+                <apex:inputText value="{!pr.qty}"/>
+            </apex:column>
+            
+            <apex:column headerValue="Price">
+                <apex:inputText value="{!pr.price}"/>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+        
+        <apex:commandButton value="More Products" action="{!addMoreProducts}"/>
+        <apex:commandButton value="Submit" action="{!displayProdcuts}"/>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
+
+//Controller Class
+public class SuperMarketCtrl1{
+
+
+    public List<MyProductWrap> prList {set;get;}
+    
+    //Constructor
+    
+        public SuperMarketCtrl1(){
+            prList = new List<MyProductWrap>();
+            prList.add(new MyProductWrap());
+            prList.add(new MyProductWrap());
+            prList.add(new MyProductWrap());
+        }
+        
+        public void addMoreProducts(){
+            prList.add(new MyProductWrap());
+            prList.add(new MyProductWrap());
+        
+        }
+        
+        //method this is used to navaigatr to another VF page
+        public pagereference displayProdcuts(){
+        
+            pagereference pg = new pagereference('/apex/DisplayProduct1VF');
+            return pg;
+        }
+    //wrapper class
+    Public class MyProductWrap
+    {
+        public string pname {set;get;}
+        public integer qty  {set;get;}
+        public decimal price{set;get;} 
+    
+    }        
+
+}
