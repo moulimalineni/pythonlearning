@@ -1,0 +1,12 @@
+<apex:page standardController="Account" recordSetVar="accList">    
+    <apex:pageblock title="Account Records">
+        <apex:dataTable value="{!accList}" var="acc" border="2">
+            <apex:column value="{!acc.Name}" headerValue="Account Name"/>  
+            <apex:column value="{!acc.Phone}" headerValue="Phone Number"/>    
+            <apex:column value="{!acc.website}" headerValue="webiste"/>    
+            <apex:column value="{!acc.Rating}" headerValue="Rating"/>    
+            <apex:column value="{!acc.Industry}" HeaderValue="Industry"/> 
+            <apex:column value="{!acc.AnnualRevenue}" headerValue="Annual Revenue"/>          
+        </apex:dataTable>
+    </apex:pageblock>
+</apex:page>

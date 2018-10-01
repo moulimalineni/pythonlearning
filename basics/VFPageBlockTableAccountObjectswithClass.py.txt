@@ -1,0 +1,29 @@
+<apex:page controller="PageBlockTableVFF">    
+    <apex:pageblock title="Account Records">
+        <apex:PageBlockTable value="{!accList}" var="acc" border="2">
+            <apex:column value="{!acc.Name}" headerValue="Account Name"/>  
+            <apex:column value="{!acc.Phone}" headerValue="Phone Number"/>    
+            <apex:column value="{!acc.website}" headerValue="webiste"/>    
+            <apex:column value="{!acc.Rating}" headerValue="Rating"/>    
+            <apex:column value="{!acc.Industry}" HeaderValue="Industry"/> 
+            <apex:column value="{!acc.AnnualRevenue}" headerValue="Annual Revenue"/>          
+        </apex:PageBlockTable>
+    </apex:pageblock>
+</apex:page>
+
+
+//Apex Class
+
+public class PageBlockTableVFF {
+
+    public List<Account> accList {set;get;}
+
+    //Constructor
+    
+    public PageBlockTableVFF(){
+        
+        accList = [select id,name,Phone,website,Industry,rating,AnnualRevenue from account 
+                   where industry='Education' ];
+    }
+
+}

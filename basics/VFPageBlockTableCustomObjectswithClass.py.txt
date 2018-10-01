@@ -1,0 +1,26 @@
+<apex:page controller="PageBlockTableCtrl12" showHeader="false">
+    <apex:pageblock title="Customer Records">
+        <apex:pageBlockTable value="{!custList}" var="cust">
+            <apex:column value="{!cust.Name}"/>  
+            <apex:column value="{!cust.Salary__c}"/>
+            <apex:column value="{!cust.Country__c}"/>
+            <apex:column value="{!cust.State__c}"/>
+            <apex:column value="{!cust.Account_Type__c}"/>       
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:page>
+
+
+//Apex Class
+public class PageBlockTableCtrl12 {
+
+    public List<Customer__C> custList {set;get;}
+    
+    //constructor
+    public PageBlockTableCtrl12(){
+    
+        custList = [select name,salary__C,country__C,State__C,Account_Type__c from Customer__C 
+                    where country__C ='India'];
+    } 
+
+}

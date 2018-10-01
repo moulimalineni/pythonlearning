@@ -1,0 +1,11 @@
+<apex:page standardController="Customer__c" recordSetVar="custList" showHeader="false">
+    <apex:pageblock title="Customer Records">
+        <apex:pageBlockTable value="{!custList}" var="cust">
+            <apex:column value="{!cust.Name}"/>  
+            <apex:column value="{!cust.Salary__c}"/>
+            <apex:column value="{!cust.Country__c}"/>
+            <apex:column value="{!cust.State__c}"/>
+            <apex:column value="{!cust.Account_Type__c}"/>       
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:page>
