@@ -1,0 +1,10 @@
+<apex:page >
+    <script>
+       var a= window.prompt('Enter A value');
+       var b= window.prompt('Enter B value');
+       var x=parseInt(a);
+       var y =parseInt(b);
+       var c= x+y;
+       document.write(c);
+    </script>
+</apex:page>

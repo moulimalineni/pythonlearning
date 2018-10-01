@@ -1,0 +1,10 @@
+<apex:page >
+    <script>
+       function myFunction(){
+       alert('Java Script function is excuted');
+       }
+    </script>
+    <Apex:form >
+        <apex:commandButton value="Submit" onclick="myFunction()"/>
+    </Apex:form>
+</apex:page>

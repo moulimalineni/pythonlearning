@@ -1,0 +1,8 @@
+<apex:page >
+    <script>
+        var a=10;
+        var b=20;
+        var c=a+b;
+        alert('C value is :'+c);
+    </script>
+</apex:page>
