@@ -1,0 +1,72 @@
+<apex:page standardController="Account" recordSetVar="accList" showHeader="false" 
+    extensions="ContactCtrl,CustomerExtCtrl">
+    <apex:pageblock Title="Account Records">
+        <apex:outputpanel layout="block" style="overflow:auto;height:150px">
+            <apex:pageblockTable value="{!accList}" var="acc">
+                <apex:column value="{!acc.Name}" />
+                <apex:column value="{!acc.Phone}" />
+                <apex:column value="{!acc.Rating}" />
+                <apex:column value="{!acc.Industry}" />
+                <apex:column value="{!acc.AnnualRevenue}" />
+                <apex:column value="{!acc.Website}" />
+            </apex:pageblockTable>
+        </apex:outputpanel>
+    </apex:pageblock> 
+    
+    <apex:pageBlock title="Extensions Example">
+        <apex:pageBlockSection >
+        <apex:pageblock title="Contact Records">
+            <apex:outputpanel layout="block" style="overflow:auto;height:150px">
+            <apex:pageblockTable value="{!conlist}" var="con">
+                <apex:column value="{!con.id}"/>
+                <apex:column value="{!con.firstname}"/>
+                <apex:column value="{!con.lastname}"/>
+                <apex:column value="{!con.email}"/>
+                <apex:column value="{!con.birthdate}"/>
+                
+            </apex:pageblockTable>
+             </apex:outputpanel>
+        </apex:pageblock>
+        
+        <apex:pageBlock title="Customer records">
+            <apex:outputpanel layout="block" style="overflow:auto;height:150px">
+                <apex:pageblockTable value="{!custlist}" var="cust">
+                    <apex:column value="{!cust.name}"/>
+                    <apex:column value="{!cust.Account_Type__c}"/>
+                    <apex:column value="{!cust.Salary__c}"/>
+                    <apex:column value="{!cust.Country__c}"/>
+                    <apex:column value="{!cust.State__c}"/>
+                    <apex:column value="{!cust.id}"/>
+                </apex:pageblockTable>
+                </apex:outputpanel>
+        </apex:pageBlock>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+ </apex:page>
+
+
+
+
+public class ContactCtrl {
+    
+    Public List<Contact> conList {set;get;}
+    public ContactCtrl(ApexPages.StandardSetController controller) {
+        
+        conlist=[select id,firstname,lastname,email,birthdate from contact];
+
+    }
+
+}
+
+
+public class CustomerExtCtrl {
+    
+    public List<Customer__c> custList {set;get;}
+
+    public CustomerExtCtrl(ApexPages.StandardSetController controller) {
+    
+        custList=[select name,Account_type__C,Country__C,State__c,salary__c from customer__c];
+
+    }
+
+}
