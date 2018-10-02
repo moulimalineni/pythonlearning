@@ -1,0 +1,9 @@
+//Triggers
+
+trigger DeleteAccountTriggerException on Account (before delete) {
+
+    
+    for(Account acc:trigger.old){
+    acc.addError('Sorry! you can not to delete this Accouny Record :'+acc.Name);
+    }
+}

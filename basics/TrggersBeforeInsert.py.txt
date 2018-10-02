@@ -1,0 +1,14 @@
+trigger GenderTrigger on Customer__c (before insert) {
+
+    for(customer__C cust : trigger.new)
+    {
+        if(cust.Gender__c== 'Male')
+            cust.Name= 'Mr. '+cust.Name;
+        else if(cust.Gender__C== 'Female')
+            cust.Name= 'Miss. '+cust.Name;
+        else
+            cust.Name=Cust.Name;        
+    
+    }
+
+}

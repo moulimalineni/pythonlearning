@@ -1,0 +1,13 @@
+
+trigger WelcomeTrigger on Customer__c (before insert , before update) {
+
+    for(Customer__c cust : trigger.new)
+    {
+        if(trigger.isInsert)
+            cust.welcome__c= 'Welcome to New Customer '+cust.name;
+        if(trigger.isUpdate)
+            cust.welcome__c=  'Welcome to Old Customer '+cust.name;  
+    
+    }
+
+}

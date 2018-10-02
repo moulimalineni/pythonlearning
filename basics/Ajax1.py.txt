@@ -1,0 +1,26 @@
+<apex:page >
+    <script src="/soap/ajax/38.0/connection.js" type="text/javascript">
+    </script>
+    
+    <script>
+       var arr= [];
+        var result=sforce.connection.sessionId ="{!$Api.Session_Id}";
+        var acc1=new sforce.SObject("Account");
+        acc1.Name='Mouli';
+        acc1.Phone='989898989'
+        acc1.Rating='Hot';
+        acc1.Industry='education';
+        arr.push(acc1);
+        
+        
+        var acc2=new sforce.SObject("Account");
+        acc2.Name='Chinna';
+        acc2.Phone='889898989'
+        acc2.Rating='Hot';
+        acc2.Industry='Cunsulting';
+        arr.push(acc2);
+        var res=sforce.connection.create(arr);
+        alert(res);
+        
+    </script>
+</apex:page>

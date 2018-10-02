@@ -1,0 +1,12 @@
+trigger ParentActiveUpdate on Child__c (after insert) {
+		
+    for(Child__C c:trigger.new)
+    {
+        if(c.Status__C=='Active')
+        {
+            parent__c p= [select id,Active__C from parent__C where id=:c.Parent_Lookup__c];
+            p.Active__C=true;
+            update p;
+        }
+    }
+}

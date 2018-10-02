@@ -1,0 +1,21 @@
+trigger DiscountTrigger on Customer__c (before insert) {
+    for(customer__c cust :trigger.new){
+        
+        if(cust.salary__c>=10000){
+           if(cust.country__c=='India' && cust.State__C=='TS')
+               cust.Discount__C=cust.salary__c-(cust.salary__c*0.5);
+            else if(cust.country__c=='India' && cust.State__C=='AP')
+               cust.Discount__C=cust.salary__c-(cust.salary__c*0.4);
+            else if(cust.country__c=='India' && cust.State__C=='Karnataka' || cust.state__c=='kerala' || cust.state__c=='TN') 
+               cust.Discount__C=cust.salary__c-(cust.salary__c*0.3);
+            else if(cust.country__c=='India')
+               cust.Discount__C=cust.salary__c-(cust.salary__c*0.2);
+            else
+              cust.Discount__C=cust.salary__c-(cust.salary__c*0.1);      
+        }
+        else
+        {
+            cust.addError('Minimum Salary is 10000');
+        }
+    }
+}

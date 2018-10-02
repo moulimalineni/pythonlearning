@@ -1,0 +1,16 @@
+trigger TransactStatusUpdate on Balance__c (after insert) {
+    List<Transact__C> trList =new List<Transact__C>();
+    for(Balance__C bal :trigger.new){
+        if(bal.balance_amount__c==10000){
+            Transact__c tr = [select id,status__C from transact__C where id=:bal.Transact_Lookup__c];
+            tr.status__c='Active';
+            trList.add(tr);
+        
+        }    
+    
+    }
+    if(trList.size()>0 && trList!= null)
+    {
+        update trList;
+    }
+}

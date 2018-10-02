@@ -1,0 +1,25 @@
+trigger OpportunityUpdate on Competetor__c (after insert) {
+    List<Opportunity> oppList = new List<Opportunity>();
+    for(Competetor__c comp : trigger.new){
+        Opportunity opp = [select id,HR__C,Developer__C from Opportunity where id=:comp.Opportunity_Lookup__C];
+        
+        if(comp.competetor_Type__c=='HR'){
+            if(opp.HR__C==null)
+                opp.HR__C=comp.Name;
+            else
+                opp.HR__C=opp.HR__C +' ; '+comp.Name;
+            oppList.add(opp);
+        }
+        else if(comp.competetor_Type__c=='Developer__C'){
+            if(opp.Developer__C==null)
+                opp.Developer__C=comp.Name;
+            else
+                opp.Developer__C=opp.Developer__C+ ' ; '+comp.Name;
+            oppList.add(opp);	
+        }
+            
+    }
+    if(oppList.size()>0 && oppList!=null){
+        update oppList;
+    }
+}

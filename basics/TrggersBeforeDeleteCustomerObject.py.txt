@@ -1,0 +1,8 @@
+trigger CustomerDeleteTriggerException on Customer__c (before delete) {
+
+    for(customer__c cust : trigger.old){
+        cust.addError('Sorry! you can not delete this Customer Record :'+cust.name);
+    
+    }
+
+}

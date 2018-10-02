@@ -1,0 +1,23 @@
+trigger AutoContact on Account (before insert) {
+    
+    Map<ID,Decimal> map1 = new Map<ID,Decimal>();
+    List<Contact> conList= new List<Contact>();
+    for(Account acc:trigger.new){
+        map1.put(acc.id,acc.Number_of_Contacts__c);
+    }
+	
+    if(map1.size()>0 && map1!=null){
+        for(ID ids:map1.keyset()){
+            for(integer i=1; i<=map1.get(ids); i++){
+                contact con = new contact();
+                con.lastname= 'C '+i;
+                con.AccountId=Ids;
+                conList.add(con);
+               
+            }
+        }
+    }
+    if(conList.size()>0 && conList!=null){
+    insert conList;
+    }
+}

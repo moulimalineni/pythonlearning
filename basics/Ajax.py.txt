@@ -1,0 +1,17 @@
+<apex:page >
+    <script src="/soap/ajax/38.0/connection.js" type="text/javascript">
+    </script>
+    
+    <script>
+    var print;
+        var result=sforce.connection.sessionId ="{!$Api.Session_Id}";
+        var myrecords=sforce.connection.query("select id,name from Customer__C");
+        var arrRec=myrecords.getArray("records");
+        alert('Number of records'+arrRec. length);
+        for(var i=0; i< arrRec.length; i++)
+        {
+            print=print +'Id----> '+arrRec[i].Id+'Name  :  '    +arrRec[i].Name+'\n';
+        }
+        alert(print);
+    </script>
+</apex:page>
